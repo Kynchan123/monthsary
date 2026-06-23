@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Monthsary, Bebu!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Poppins:wght300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+
+        <div id="welcome-screen" class="screen active">
+            <div class="main-header">
+                <h1>Happy Monthsary, Bebu!</h1>
+                <p>Another Month Down, A Lifetime to Go</p>
+            </div>
+            <button class="mascot-btn" onclick="navigateTo('passcode-screen')">
+                <img src="assets/photo_2026-06-09_13-04-53 (2).jpg" alt="Cute Mascot">
+            </button>
+            <div class="tap-hint">Tap Here</div>
+        </div>
+
+        <div id="passcode-screen" class="screen">
+            <div class="main-header">
+                <h1>Happy Monthsary, Bebu!</h1>
+                <p>Enter our monthsary date</p>
+            </div>
+            
+            <div class="passcode-display" id="passcode-display">----</div>
+            
+            <div class="keypad">
+                <button class="key" onclick="pressKey('1')">1</button>
+                <button class="key" onclick="pressKey('2')">2</button>
+                <button class="key" onclick="pressKey('3')">3</button>
+                <button class="key" onclick="pressKey('4')">4</button>
+                <button class="key" onclick="pressKey('5')">5</button>
+                <button class="key" onclick="pressKey('6')">6</button>
+                <button class="key" onclick="pressKey('7')">7</button>
+                <button class="key" onclick="pressKey('8')">8</button>
+                <button class="key" onclick="pressKey('9')">9</button>
+                <button class="key heart-key" onclick="clearPasscode()">❤</button>
+                <button class="key" onclick="pressKey('0')">0</button>
+                <button class="key heart-key" onclick="checkPasscode()">➔</button>
+            </div>
+        </div>
+
+        <div id="dashboard-screen" class="screen">
+            <div class="main-header">
+                <h1>Happy Monthsary, Bebu!</h1>
+                <p>Another Month Down, A Lifetime to Go</p>
+            </div>
+
+            <div class="menu-grid">
+                <div class="menu-card" onclick="navigateTo('flowers-screen')">
+                    <span class="icon">🌸</span>
+                    <span>Flowers for you</span>
+                </div>
+                <div class="menu-card" onclick="navigateTo('letter-screen')">
+                    <span class="icon">✉</span>
+                    <span>My love letter</span>
+                </div>
+                <div class="menu-card" onclick="navigateTo('song-screen')">
+                    <span class="icon">🧸</span>
+                    <span>A song for you</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="flowers-screen" class="screen">
+            <button class="back-btn" onclick="navigateTo('dashboard-screen')">❮</button>
+            <div class="main-header">
+                <h1>Flowers & More to Come</h1>
+            </div>
+            <div class="content-wrapper">
+                <div class="gallery-grid">
+                    <div class="gallery-item"><img src="assets/photo_2025-12-25_09-06-03.jpg"></div>
+                    <div class="gallery-item"><img src="assets/photo_2025-12-25_09-06-28.jpg"></div>
+                    <div class="gallery-item"><img src="assets/photo_2026-01-07_13-46-04.jpg"></div>
+                    <div class="gallery-item"><img src="assets/photo_2026-05-27_03-21-50.jpg"></div>
+                    <div class="gallery-item"><img src="assets/photo_2026-06-10_04-54-28.jpg"></div>
+                    <div class="gallery-item"><img src="assets/photo_2026-06-17_22-25-41 (2).jpg"></div>
+                    <div class="gallery-item"><img src="assets/photo_2026-06-17_22-25-41 (3).jpg"></div>
+                    <div class="gallery-item"><img src="assets/photo_2026-06-17_22-25-41.jpg"></div>
+                    <div class="gallery-item"><img src="assets/photo_2026-06-17_22-36-10.jpg"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="letter-screen" class="screen">
+            <button class="back-btn" onclick="navigateTo('dashboard-screen')">❮</button>
+            <div class="main-header">
+                <h1>My Love Letter</h1>
+            </div>
+            <div class="content-wrapper">
+                <div class="letter-container">
+                    <div class="letter-pages">
+                        <div class="letter-page active">
+                            <p>Happy monthsary, Bebu! 🤍</p> <br>I love you so, so much more than any words in the world could ever fully explain. <br> To be completely honest, I never expected to find a love like this. The way you love me, the way you protect me, and everything you sacrifice for us... it leaves me so incredibly grateful. It hurts my heart to think I’ve ever caused you pain, because hurting you is the absolute last thing I would ever want to do. I’m just so thankful and sometimes so humbled that you chose to love me, even when I feel like a mess, and even when I worry about not being the perfect partner for you.
+                        </div>
+                        <div class="letter-page">
+                            <p>When you tell me that I have a pure heart and that I am kind, you have no idea how much that means to me. I'll be honest, sometimes it's hard to quiet the noise in my own head, and I fight these quiet fears that I’m falling short. But being with you makes me want to fight those thoughts. I want so badly to wake up every single day and be exactly the person you deserve the one who brings you nothing but pure peace and happiness. Because at the end of the day, I only ever want it to be you and me. There is no one else for me. <br> I am so incredibly proud, lucky, and thankful to call you mine. You are truly my favorite person, and I constantly think about our plans so we can be together in the future, no more distance. </p>
+                        </div>
+                        <div class="letter-page">
+                            <p>Bebu, you could never be 'too much' or a burden to me you are my entire world. Please never feel like you owe me anything for the things I do. Everything I give you, I give freely, straight from my heart, just because I love you so completely. No matter what the future holds, my love for you is unconditional, deep, and steady. I choose you, always. You deserve the absolute world, and my biggest wish is to be the person who gives it to you. I want to keep growing, keep learning, and be the very best version of myself just for you..<br><br>Happy monthsary again, bebu. I miss you with every single breath I take, and there isn't a second that goes by where you aren't on my mind.<br><br>I miss you, I miss you, I miss you, I miss you, I miss you. Forever and always. 💕<br>ILOVEYOU SO MUCH!!!!!!!!!!💕</p>
+                        </div>
+                    </div>
+                    
+                    <div class="slider-dots">
+                        <div class="dot active" onclick="switchLetterPage(0)"></div>
+                        <div class="dot" onclick="switchLetterPage(1)"></div>
+                        <div class="dot" onclick="switchLetterPage(2)"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="song-screen" class="screen">
+            <button class="back-btn" onclick="navigateTo('dashboard-screen')">❮</button>
+
+            <div class="main-header">
+                <h1>This song is for you, Bebu!</h1>
+            </div>
+
+            <div class="video-container">
+                <img src="assets/photo_2026-06-19_01-36-32.jpg">
+            </div>
+
+            <div class="music-vinyl">💿</div>
+
+            <audio id="loveSong" controls>
+                <source src="assets/Justin Bieber - Anyone (Lyrics).mp3" type="audio/mpeg">
+            </audio>
+        </div>
+
+    </div>
+
+    <div class="desktop-collage">
+
+    <div class="photo-card p1">
+        <img src="assets/IMG_0354.PNG" class="desk-photo">
+        <div class="photo-message">My favorite smile 🤍</div>
+    </div>
+
+    <div class="photo-card p2">
+        <img src="assets/IMG_6518.jpg" class="desk-photo">
+        <div class="photo-message">Forever my person 💕</div>
+    </div>
+
+    <div class="photo-card p3">
+        <img src="assets/IMG_1202.JPG" class="desk-photo">
+        <div class="photo-message">I miss you every day 🥺</div>
+    </div>
+
+    <div class="photo-card p4">
+        <img src="assets/photo_2025-12-25_09-05-25.jpg" class="desk-photo">
+        <div class="photo-message">I love you, Bebu ❤️</div>
+    </div>
+
+
+    <script src="index.js"></script>
+</body>
+</html>

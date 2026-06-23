@@ -1,0 +1,470 @@
+:root {
+    --primary-pink: #ffb7b2;
+    --dark-pink: #e5989b;
+    --rose-red: #b56576;
+    --deep-plum: #6d597a;
+    --soft-white: #fff1f2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: linear-gradient(rgba(88,25,35,.45), rgba(88,25,35,.45)), 
+                url("assets/photo_2025-12-25_09-05-38.jpg") center/cover no-repeat;
+}
+
+/* Container Frame matched with video background layout */
+.app-container {
+    width: 100%;
+    max-width: 1000px;
+    height: 90vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+                url('assets/IMG_1202.JPG') no-repeat center center/cover;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    position: relative;
+    overflow: hidden;
+    border: 4px solid #fff;
+    z-index: 10;
+}
+
+/* Screen Layouts */
+.screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transform: scale(0.95);
+}
+
+.screen.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+}
+
+#song-screen {
+    justify-content: flex-start;
+    padding-top: 70px;
+    overflow-y: auto;
+}
+
+/* Main Headers */
+.main-header {
+    margin-bottom: 20px;
+}
+
+.main-header h1 {
+    font-family: 'Alex Brush', cursive;
+    font-size: 3rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    line-height: 1.2;
+}
+
+.main-header p {
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--primary-pink);
+    font-weight: 600;
+    margin-top: 5px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* Welcome Screen Element */
+#welcome-screen .mascot-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin-top: 30px;
+}
+
+#welcome-screen .mascot-btn:hover {
+    transform: scale(1.1);
+}
+
+#welcome-screen .mascot-btn img {
+    width: 130px;
+    height: auto;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+}
+
+#welcome-screen .tap-hint {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    animation: pulse 1.5s infinite;
+}
+
+/* Passcode System */
+.passcode-display {
+    width: 160px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid var(--primary-pink);
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: var(--rose-red);
+    margin-bottom: 25px;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    max-width: 250px;
+}
+
+.key {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--rose-red);
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.key:active {
+    transform: scale(0.9);
+    background: var(--primary-pink);
+    color: white;
+}
+
+.key.heart-key {
+    background: var(--primary-pink);
+    color: white;
+    font-size: 1.4rem;
+}
+
+/* Central Hub Dashboard */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.menu-card {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 15px 10px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid rgba(255, 183, 178, 0.5);
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.menu-card .icon {
+    font-size: 2rem;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.menu-card span {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--deep-plum);
+}
+
+/* Navigation Actions */
+.back-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: white;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    color: var(--rose-red);
+    font-weight: bold;
+    z-index: 20;
+}
+
+.content-wrapper {
+    width: 100%;
+    height: 70%;
+    overflow-y: auto;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+/* Sub-screen: Photo Grid */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.gallery-item {
+    width: 100%;
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    border: 2px solid white;
+}
+
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Sub-screen: Love Letter Box */
+.letter-container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: left;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.letter-pages {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.letter-page {
+    display: none;
+    color: #444;
+}
+
+.letter-page.active {
+    display: block;
+}
+
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ccc;
+    cursor: pointer;
+}
+
+.dot.active {
+    background: var(--rose-red);
+    transform: scale(1.2);
+}
+
+/* Sub-screen: Media Player Container */
+.video-container {
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    background: black;
+    aspect-ratio: 16/9;
+    margin: 20px 0;
+}
+
+.video-container img{
+    width: 100%;
+    height: 100%;
+    border: none;
+     overflow: hidden;
+}
+
+.music-vinyl {
+    font-size: 4rem;
+    margin: 15px 0;
+    animation: spin 4s linear infinite;
+    display: inline-block;
+}
+
+audio {
+    width: 100%;
+    max-width: 320px;
+    margin-top: 10px;
+}
+
+/* Desktop Collage Positioning */
+.desktop-collage {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.photo-card {
+     position: absolute;
+    pointer-events: auto;
+    transition: transform .3s ease;
+}
+
+.photo-card:hover {
+     transform: scale(1.1) rotate(0deg);
+    z-index: 200;
+}
+
+.desk-photo {
+    width: 230px;
+    height: 300px;
+    object-fit: cover;
+    border: 6px solid white;
+    border-radius: 18px;
+    box-shadow: 0 15px 35px rgba(0,0,0,.2);
+    display: block;
+}
+
+.photo-message {
+    position: absolute;
+    left: 50%;
+    bottom: -50px;
+    transform: translateX(-50%);
+    background: rgba(255,255,255,.95);
+    color: var(--rose-red);
+    padding: 8px 14px;
+    border-radius: 20px;
+      font-family: 'Alex Brush', cursive;
+    font-size: 1.4rem;
+    font-weight: 600;
+    white-space: nowrap;
+    opacity: 0;
+    transition: all .3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,.15);
+}
+
+.photo-card:hover .photo-message {
+    opacity: 1;
+    bottom: -40px;
+}
+
+.p1 { left: 7%; top: 10%; transform: rotate(-12deg); }
+.p2 { left: 10%; bottom: 10%; transform: rotate(8deg); }
+.p3 { right: 10%; top: 10%; transform: rotate(10deg); }
+.p4 { right: 7%; bottom: 10%; transform: rotate(-10deg); }
+
+@media (max-width: 900px) {
+    .desktop-collage {
+         position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 100;
+    }
+    .app-container {
+    z-index: 10;
+}
+
+    .desk-photo {
+       width: 120px;
+        height: 160px;
+        border-width: 3px;
+    }
+.photo-card {
+    pointer-events: auto;
+}
+    .p1 {
+        left: 2%;
+        top: 5%;
+    }
+
+    .p2 {
+        left: 2%;
+        bottom: 5%;
+    }
+
+    .p3 {
+        right: 2%;
+        top: 5%;
+    }
+
+    .p4 {
+        right: 2%;
+        bottom: 5%;
+    }
+
+    .photo-message {
+        font-size: 0.7rem;
+        padding: 6px 10px;
+        max-width: 120px;
+        white-space: normal;
+        text-align: center;
+    }
+    
+}
+
+/* Animations */
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.9; }
+    50% { transform: scale(1.05); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.9; }
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+
+.content-wrapper::-webkit-scrollbar,
+.letter-pages::-webkit-scrollbar {
+    width: 4px;
+}
+.content-wrapper::-webkit-scrollbar-thumb,
+.letter-pages::-webkit-scrollbar-thumb {
+    background: var(--dark-pink);
+    border-radius: 10px;
+}
