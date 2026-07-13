@@ -399,6 +399,55 @@ audio {
 .p3 { right: 10%; top: 10%; transform: rotate(10deg); }
 .p4 { right: 7%; bottom: 10%; transform: rotate(-10deg); }
 
+@media (max-width: 1800px) {
+    .desktop-collage {
+         position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 100;
+    }
+    .app-container {
+    z-index: 10;
+}
+
+    .desk-photo {
+       width: 120px;
+        height: 160px;
+        border-width: 3px;
+    }
+.photo-card {
+    pointer-events: auto;
+}
+    .p1 {
+        left: 2%;
+        top: 5%;
+    }
+
+    .p2 {
+        left: 2%;
+        bottom: 5%;
+    }
+
+    .p3 {
+        right: 2%;
+        top: 5%;
+    }
+
+    .p4 {
+        right: 2%;
+        bottom: 5%;
+    }
+
+    .photo-message {
+        font-size: 0.7rem;
+        padding: 6px 10px;
+        max-width: 120px;
+        white-space: normal;
+        text-align: center;
+    }
+    
+}
+
 @media (max-width: 900px) {
     .desktop-collage {
          position: fixed;
