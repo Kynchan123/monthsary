@@ -411,9 +411,9 @@ audio {
 }
 
     .desk-photo {
-       width: 120px;
-        height: 160px;
-        border-width: 3px;
+       width: 250px;
+        height: 280px;
+        border-width: 5px;
     }
 .photo-card {
     pointer-events: auto;
